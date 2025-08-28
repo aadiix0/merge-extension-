@@ -1,0 +1,440 @@
+<!--  
+@Date    : 2020-09-12 16:26:48
+@Author  : residuallaugh 
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <script src="ezrevenue-sdk/ui.js"></script>
+</head>
+<body style="width:780px; font-size: 14px;">
+    <div style="width:780px; height: 30px; margin-left: 15px;">
+        <a href="popup.html"><div id="Zhuye" style="width: 55px; height: 28px; float: left; text-align: center; line-height: 28px; font-size: 14px; background: #000000; color: #ffffff; border: 1px solid black;border-radius: 2px 0px 0px 2px;">主页</div></a><a href="settings.html"><div id="Peizhi" style="width: 55px; height: 28px; float: left; text-align: center; line-height: 28px; font-size: 14px; background: #ffffff; color: #000000; border: 1px solid black;border-left: none;border-radius: 0px 0px 0px 0px;">配置</div></a><a href="#" id="manual-link"><div id="Shouce" style="width: 70px; height: 28px; float: left; text-align: center; line-height: 28px; font-size: 14px; background: #ffffff; color: #000000; border: 1px solid black;border-left: none;border-radius: 0px 2px 2px 0px;">使用手册</div></a>
+        <button id="vip-button" style="width: 90px; height: 28px; float: right; margin-right: 25px; text-align: center; line-height: 28px; font-size: 14px; background: #FFD700; color: #000; border: 1px solid #FFD700; border-radius: 2px;">开通会员</button>
+    </div>
+    <div style="width:780px; height: 800px; margin-left: 15px;">
+        <div id="taskstatus" style="height: 34px; line-height: 34px;"></div>
+        <div id="popup-toast-container" style="position: fixed; top: 20px; left: 20px; z-index: 1000001; pointer-events: none;"></div>
+        <div id="left-column" style="width: 256px; float: left;">
+            <!-- 左侧区域内容将由JavaScript动态生成 -->
+        </div>
+        <div id="right-column" style="width: 480px; height: 800px; float: left; margin-left:16px;">
+            <!-- 右侧区域内容将由JavaScript动态生成 -->
+        </div>
+</div>
+</body>
+<!-- <script src="jquery-3.6.0.min.js"></script> -->
+<script src="popup.bundle.js"> </script>
+<style type="text/css">
+    .copy {
+        border-style: none;
+        background-color: #ffffff;
+        float: right;
+        margin-right: 16px;
+        
+    }
+    .findsomething_title {
+        font-size: 16px;
+        font-weight: bold;
+        border-left: 4px solid black;
+        text-indent: 4px;
+        line-height: 1.2;
+        display: flex;
+        align-items: center;
+    }
+    .collapsible-title {
+        cursor: pointer;
+        user-select: none;
+        transition: background-color 0.2s ease;
+    }
+    .collapsible-title:hover {
+        background-color: #f5f5f5;
+    }
+    .collapsible-title.collapsed::after {
+        content: "";
+    }
+    .collapsible-title.expanded::after {
+        content: "";
+    }
+    .section-content {
+        overflow: visible; /* 允许内部箭头/tips溢出可见 */
+        transition: max-height 0.3s ease;
+        max-height: none;
+        width: 100%;
+        padding: 0 5px;
+        box-sizing: border-box;
+    }
+    .section-content.collapsed {
+        max-height: 0;
+        overflow: hidden; /* 折叠时再隐藏 */
+    }
+    .tips {
+        display: inline-block;
+        border-top: 1px solid; /* 提高线宽，避免细线被抗锯齿吞掉 */
+        border-right: 1px solid;
+        width: 10px;
+        height: 10px;
+        border-color: #EA6000; /* 黄色/橙色箭头 */
+        transform: rotate(-135deg);
+        position: relative;
+        z-index: 3; /* 盖过相邻文本 */
+        margin-right: 0; /* 右侧不调整 */
+        margin-left: 0; /* 取消向右偏移 */
+        pointer-events: none;
+        align-self: flex-start; /* 顶部对齐 */
+    }
+    .tips2 {
+        display: inline-block;
+        border-top: 1px solid;
+        border-right: 1px solid;
+        width: 10px;
+        height: 10px;
+        border-color: #000000;
+        transform: rotate(-135deg);
+        position: relative;
+        z-index: 3;
+        margin-right: 0px;
+        pointer-events: none;
+    }
+    span {
+        display: inline-block;
+        word-wrap: break-word;
+        width: calc(100% - 20px);
+        white-space: pre-wrap;
+        word-break: break-all;
+        line-height: 1.375em; /* 与JS使用整数行高 22px（若基准字号16px）匹配 */
+        max-height: 2.75em; /* 2 * 1.375em */
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        vertical-align: top;
+        position: relative;
+        box-sizing: border-box;
+    }
+    /* 动态代码分析区域的span特殊样式 */
+    #showCode span {
+        width: calc(100% - 24px);
+    }
+    /* 折叠功能样式 - 参考fixed-non-virtual-spans1.html */
+    span.collapsible {
+        cursor: pointer;
+        padding-right: 80px !important;
+        max-height: 2.75em !important; /* 调整为整数行高的两行（约 2 * 1.375em） */
+        overflow: hidden !important;
+        transition: max-height 0.3s ease, background-color 0.2s ease;
+    }
+    span.collapsible.expanded {
+        max-height: none !important;
+        overflow: visible !important;
+    }
+    span.collapsible:hover {
+        background-color: #f8f9fa !important;
+    }
+    /* 展开/收起提示样式 - 简化版本 */
+    .expand-hint {
+        color: #007acc;
+        font-weight: bold;
+        font-size: 11px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: transparent;
+        padding: 0 2px;
+        pointer-events: none;
+        z-index: 1; /* 恢复原始层级，右侧不再额外调整 */
+        white-space: nowrap;
+        min-width: 80px;
+        text-align: right;
+    }
+    .collapse-hint {
+        color: #007acc;
+        font-weight: bold;
+        font-size: 11px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: transparent;
+        padding: 0 2px;
+        pointer-events: none;
+        display: none;
+        z-index: 1; /* 恢复原始层级，右侧不再额外调整 */
+        white-space: nowrap;
+        min-width: 80px;
+        text-align: right;
+    }
+    /* 移除CSS伪元素，改为JavaScript动态创建 */
+    /* 去除文本 hover/active 背景，保持与整行一致 */
+    span:hover {
+        background-color: transparent;
+    }
+    span:active {
+        background-color: transparent;
+    }
+    p {
+        width: 100%;
+        margin: 0;
+        padding: 5px 0;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    a{
+        display: inline-block;
+        text-decoration:none;
+        color:#333;
+        vertical-align: top;
+    }
+    button{
+        cursor: pointer
+    }
+    /* 区域条数统计样式 */
+    .section-count-badge {
+        transition: all 0.3s ease;
+    }
+    .section-count-badge:hover {
+        transform: scale(1.1);
+    }
+    
+    /* 虚拟滚动样式 */
+    .virtual-scroll-container {
+        height: 2000px;
+        overflow-y: auto;
+        position: relative;
+        margin: 0;
+        background: transparent;
+        scrollbar-width: thin;
+        scrollbar-color: #d0d0d0 transparent;
+        border: none !important;
+        background: transparent !important; /* 去除灰底 */
+    }
+    .virtual-scroll-container::-webkit-scrollbar {
+        width: 6px;
+    }
+    .virtual-scroll-container::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    .virtual-scroll-container::-webkit-scrollbar-thumb {
+        background: #d0d0d0;
+        border-radius: 3px;
+    }
+    .virtual-scroll-container::-webkit-scrollbar-thumb:hover {
+        background: #b0b0b0;
+    }
+    
+    /* 虚拟滚动内容容器 */
+    .virtual-scroll-content {
+        position: relative;
+        overflow: visible; /* 允许子元素提示溢出 */
+        background: #ffffff; /* 与子项背景一致，掩盖任何微小缝隙 */
+    }
+    /* 移除滚动渲染阶段的分隔线显隐控制（根据你的反馈撤回） */
+    
+    /* 虚拟滚动项目 */
+    .virtual-scroll-item {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: auto; /* 可变高度，由JS测量并设置top/height */
+        padding: 2px 0;
+        box-sizing: border-box;
+        background: white;
+        transition: background-color 0.2s ease;
+        border-bottom: 0; /* 使用伪元素绘制分隔线，避免边框参与布局/抗锯齿 */
+        overflow: visible; /* 允许提示溢出显示 */
+        z-index: 1; /* 确保在容器内可见 */
+        background-clip: padding-box;
+    }
+    .virtual-scroll-item::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        background: var(--vs-divider-color, transparent); /* JS 控制当前项分隔线是否显示 */
+        pointer-events: none;
+        transform: translateZ(0); /* 减少抗锯齿导致的发灰 */
+    }
+    .virtual-scroll-item:hover {
+        background: #f8f9fa;
+    }
+    .virtual-scroll-item:last-child {
+        border-bottom: none;
+    }
+    
+    /* 信息项容器 */
+    .info-item {
+        display: flex;
+        align-items: center;
+        margin: 2px 0;
+        padding: 2px 0;
+        overflow: visible;
+    }
+    .info-item:hover {
+        background: #f8f9fa; /* 与虚拟滚动行一致的悬浮背景 */
+        transition: background-color 0.2s ease;
+    }
+    .info-item a {
+        overflow: visible;
+        position: relative;
+        z-index: 2;
+        flex-shrink: 0; /* 避免被压缩导致箭头被挤 */
+        margin-right: 0;
+        margin-left: 2px; 
+        align-self: flex-start; /* 顶部对齐箭头容器 */
+    }
+    .info-item span {
+        margin-left: 0; /* 文本不再右移 */
+        flex: 1;
+        word-break: break-all;
+    }
+    
+    /* 代码项容器 */
+    .showcode-item {
+        display: flex;
+        align-items: flex-start;
+        margin: 4px 0;
+        padding: 4px 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .showcode-item:hover {
+        background: #f8f9fa; /* 与虚拟滚动行一致的悬浮背景 */
+        transition: background-color 0.2s ease;
+    }
+    .showcode-item .button-area {
+        display: flex;
+        flex-direction: row;
+        margin-right: 0px;
+        flex-shrink: 0;
+        align-items: center;
+        gap: 0px;
+    }
+    .showcode-item .code-content {
+        flex: 1;
+        word-break: break-all;
+        white-space: pre-wrap;
+    }
+    
+    /* 状态显示容器 */
+    #render-status {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background: rgba(0,0,0,0.8);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-size: 12px;
+        z-index: 10000;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    /* 复制成功提示 */
+    .copy-success-tooltip {
+        position: fixed;
+        background: rgba(0,0,0,0.8);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-size: 12px;
+        z-index: 10001;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        transform: translateY(-10px);
+    }
+    
+    /* Toast提示 */
+    .popup-toast {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        font-size: 14px;
+        max-width: 300px;
+        word-wrap: break-word;
+        opacity: 0;
+        transform: translateX(-100%);
+        transition: all 0.3s ease;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        margin-bottom: 10px;
+        z-index: 10002;
+    }
+    
+    /* 区域容器 */
+    .section-container {
+        margin-bottom: 16px;
+        border: none;
+        border-radius: 4px;
+        overflow: visible;
+    }
+    .section-title-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 12px;
+        background: #f8f9fa;
+        cursor: pointer;
+        user-select: none;
+    }
+    .section-title {
+        flex: 1;
+        margin: 0;
+        font-size: 14px;
+        font-weight: 600;
+        color: #333;
+    }
+    .section-count-badge {
+        background: #007bff;
+        color: white;
+        padding: 2px 6px;
+        border-radius: 10px;
+        font-size: 11px;
+        transition: all 0.3s ease;
+    }
+    .section-count-badge:hover {
+        transform: scale(1.1);
+    }
+    
+    /* 折叠功能 */
+    .collapsible {
+        position: relative;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    .collapsible.collapsed {
+        max-height: 44.8px;
+    }
+    .collapsible.expanded {
+        max-height: none;
+    }
+    .expand-hint,
+    .collapse-hint {
+        color: #007bff;
+        cursor: pointer;
+        font-size: 12px;
+        margin-left: 4px;
+    }
+    .collapse-hint {
+        display: none;
+    }
+    .collapsible.expanded .expand-hint {
+        display: none;
+    }
+    .collapsible.expanded .collapse-hint {
+        display: inline;
+    }
+    
+    /* 数字变化动画 */
+    .count-animation {
+        transition: transform 0.2s ease;
+    }
+    .count-animation.scale {
+        transform: scale(1.2);
+    }
+</style>
+</html>

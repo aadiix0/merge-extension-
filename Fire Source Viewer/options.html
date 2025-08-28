@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/options.css" type="text/css" />
+    <title>Options - Fire Source Viewer</title>
+</head>
+
+<body>
+    <h1><img src="icons/gear19.png" /> Options - Fire Source Viewer</h1>
+
+    <div class="item">
+        <div class="help">
+            <p>Show the number of Javascript nodes as a badge in the toolbar.</p>
+        </div>
+
+        <h2>Badge</h2>
+
+        <label><input id="inptip" type="checkbox"/> Show script node count</label>
+        <label><input id="isredcount" type="checkbox"/> Colorize to red if count is equal or greater than
+            <input id="redcount" type="text"/>
+        </label>
+
+    </div>
+
+
+    <div class="item">
+        <div class="help">
+            <p>Initially beautifies source code. (Beautify modifies styling such as new lines, whitespace and indentation to make source more readable.)</p>
+
+            <p>You can control this on demand in the source view with a button or a keyboard shortcut 'B'.</p>
+        </div>
+
+        <h2>Beautify</h2>
+
+        <label><input id="inpbeautify" type="checkbox"/> Beautify sources</label>
+    </div>
+
+    <div class="item">
+        <div class="help">
+            <p>Initially displays line numbers.</p>
+            <p>You can control this on demand in the source view with a keyboard shortcut 'N'.</p>
+        </div>
+
+        <h2>Line numbers</h2>
+
+        <label><input id="inplinenum" type="checkbox"/> Display line
+            numbers</label>
+    </div>
+
+    <div class="item">
+        <div class="help">
+            <p>Show caching information of external files. Picks the HTTP header "Expires", "Cache-Control" or "Age", in this order. </p>
+        </div>
+
+        <h2>Cache header</h2>
+
+        <label><input id="inpcache" type="checkbox"/> Show cache header of files </label>
+    </div>
+
+    <div class="item">
+        <div class="help">
+            <p>Show onclick handlers with inline javascript.</p>
+        </div>
+
+        <h2>OnClick</h2>
+
+        <label><input id="inponclick" type="checkbox"/> Show inline onclick handlers </label>
+    </div>
+
+    <div class="item">
+        <div class="help">
+            <p>List of source files urls to hilight, one url match per line.</p>
+        </div>
+
+        <h2>Hilight sources</h2>
+
+        <textarea id="hi"></textarea>
+    </div>
+
+
+    <div class="item">
+        <div class="help">
+            <p>Adjust the look and feel of the extension with custom CSS. (See the available elements by inspecting the page.)</p>
+        </div>
+
+        <h2>Custom CSS</h2>
+
+        <textarea id="css"></textarea>
+    </div>
+
+    <script src="ext/jquery-3.3.1.js" type="text/javascript"></script>
+    <script src="js/config.js" type="text/javascript"></script>
+    <script src="js/options.js" type="text/javascript"></script>
+</body>
+
+</html>

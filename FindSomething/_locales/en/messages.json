@@ -1,0 +1,250 @@
+{
+    "extName": {
+        "message": "FindSomething",
+        "description": "Extension name"
+    },
+    "extDescription": {
+        "message": "Find interesting things in the webpage's source code or JavaScript",
+        "description": "Extension description"
+    },
+    "Zhuye": {
+        "message": "Home",
+        "description": "Home page of the popup"
+    },
+    "Peizhi": {
+        "message": "Settings",
+        "description": "Settings page of the popup"
+    },
+    "Shouce": {
+        "message": "Manual",
+        "description": "Manual page of the popup"
+    },
+    "popupCopy": {
+        "message": "Copy",
+        "description": "Copy button on the popup page"
+    },
+    "popupCopyurl": {
+        "message": "Copy URL",
+        "description": "Copy URL button on the popup page"
+    },
+    "popupCopySuccess": {
+        "message": "Copy Success",
+        "description": "Copy success message on the popup page"
+    },
+    "popupIp": {
+        "message": "IP",
+        "description": "Title on the popup page: IP"
+    },
+    "popupIpPort": {
+        "message": "IP and Port",
+        "description": "Title on the popup page: IP_PORT"
+    },
+    "popupDomain": {
+        "message": "Domain",
+        "description": "Title on the popup page: Domain"
+    },
+    "popupSfz": {
+        "message": "ID Card",
+        "description": "Title on the popup page: ID Card"
+    },
+    "popupMobile": {
+        "message": "Mobile Number",
+        "description": "Title on the popup page: Mobile Number"
+    },
+    "popupMail": {
+        "message": "Email",
+        "description": "Title on the popup page: Email"
+    },
+    "popupJwt": {
+        "message": "JWT",
+        "description": "Title on the popup page: JWT"
+    },
+    "popupAlgorithm": {
+        "message": "Algorithm",
+        "description": "Title on the popup page: Algorithm"
+    },
+    "popupSecret": {
+        "message": "Sensitive Information",
+        "description": "Title on the popup page: Sensitive Information"
+    },
+    "popupPath": {
+        "message": "PATH",
+        "description": "Title on the popup page: Path"
+    },
+    "popupIncompletePath": {
+        "message": "Incomplete Path",
+        "description": "Title on the popup page: Incomplete Path"
+    },
+    "popupUrl": {
+        "message": "URL",
+        "description": "Title on the popup page: URL"
+    },
+    "popupStaticPath": {
+        "message": "Static Path",
+        "description": "Title on the popup page: Static Path"
+    },
+    "popupProcessing": {
+        "message": "Processing...",
+        "description": "Progress prompt on the popup page: Processing"
+    },
+    "popupComplete": {
+        "message": "Processing Complete:",
+        "description": "Progress prompt on the popup page: Processing Complete"
+    },
+    "popupTipClickBeforeCopy": {
+        "message": "Please click on the original page before copying :)",
+        "description": "Copy tip on the popup page when an error occurs"
+    },
+    "settingClearCache": {
+        "message": "Clear Cache",
+        "description": "Title on the settings page: Clear Cache"
+    },
+    "settingClearLocalStorage": {
+        "message": "Clear",
+        "description": "Button on the settings page: Clear"
+    },
+    "settingClearComplete": {
+        "message": "Clear Complete",
+        "description": "Prompt on the settings page: Clear Complete"
+    },
+    "settingClosed": {
+        "message": "Closed",
+        "description": "Button on the settings page: Closed"
+    },
+    "settingOpened": {
+        "message": "Opened",
+        "description": "Button on the settings page: Opened"
+    },
+    "settingGlobalFloatingWindow": {
+        "message": "Global Floating Window",
+        "description": "Title on the settings page: Global Floating Window"
+    },
+    "settingAutoTimeout": {
+        "message": "Auto Timeout",
+        "description": "Title on the settings page: Auto Timeout"
+    },
+    "settingSafe": {
+        "message": "Safe Mode",
+        "description": "Title on the settings page: Safe Mode"
+    },
+    "settingVipSwitch": {
+        "message": "VIP Switch",
+        "description": "When the VIP switch is on, only VIP users can use the feature. When off, no one can use it."
+    },
+    "settingLayout": {
+        "message": "Layout Settings",
+        "description": "Configure the order of information types in the popup"
+    },
+    "settingLayoutLeftArea": {
+        "message": "Left Area",
+        "description": "Left area title in layout settings"
+    },
+    "settingLayoutRightArea": {
+        "message": "Right Area",
+        "description": "Right area title in layout settings"
+    },
+    "settingLayoutPriority": {
+        "message": "Priority",
+        "description": "Priority label in layout settings"
+    },
+    "settingWebhook": {
+        "message": "Webhook",
+        "description": "Title on the settings page: Webhook"
+    },
+    "settingWebhookUrl": {
+        "message": "Callback URL",
+        "description": "Setting item on the settings page: Callback URL"
+    },
+    "settingWebhookMethod": {
+        "message": "Request Method",
+        "description": "Setting item on the settings page: Request Method"
+    },
+    "settingWebhookArg": {
+        "message": "Request Parameters",
+        "description": "Setting item on the settings page: Request Parameters"
+    },
+    "settingWebhookHeaders": {
+        "message": "Custom Headers",
+        "description": "Setting item on the settings page: Custom Headers"
+    },
+    "settingDomainAllowList": {
+        "message": "Domain Allowlist",
+        "description": "Setting item on the settings page: Domain Allowlist"
+    },
+    "settingDomainAllowListTip": {
+        "message": "Enter the end part of the domain, separated by new lines, if not configured defaults to .google.com, .amazon.com, portswigger.net",
+        "description": "Tip in the settings page for Domain Allowlist"
+    },
+    "settingAI": {
+        "message": "AI Configuration",
+        "description": "Title on the settings page: AI Configuration"
+    },
+    "settingAIbaseURL": {
+        "message": "API URL",
+        "description": "Setting item on the settings page: AI API URL"
+    },
+    "settingAIapiKey": {
+        "message": "API Key",
+        "description": "Setting item on the settings page: AI API Key"
+    },
+    "settingAImodel": {
+        "message": "Model",
+        "description": "Setting item on the settings page: AI Model"
+    },
+    "settingAISystemPrompt": {
+        "message": "System Prompt",
+        "description": "Setting item on the settings page: AI System Prompt"
+    },
+    "settingAIUserPrompt": {
+        "message": "User Prompt",
+        "description": "Setting item on the settings page: AI User Prompt"
+    },
+    "popupVipSubscribe": {
+        "message": "Subscribe VIP",
+        "description": "VIP button on popup page: Subscribe VIP"
+    },
+    "popupVipMember": {
+        "message": "My VIP",
+        "description": "VIP button on popup page: My VIP"
+    },
+    "popupVipFeature": {
+        "message": "VIP Feature",
+        "description": "VIP feature prompt on popup page"
+    },
+    "popupVipSwitchOff": {
+        "message": "Please Turn On VIP Switch",
+        "description": "Button text when VIP switch is off on popup page"
+    },
+    "popupVipSwitchOffAlert": {
+        "message": "Please turn on VIP switch in settings page first",
+        "description": "Alert when clicking button with VIP switch off on popup page"
+    },
+    "popupAIAnalysis": {
+        "message": "Click for AI Analysis",
+        "description": "AI analysis prompt on popup page"
+    },
+    "popupAnalyze": {
+        "message": "Dynamic Code Analysis",
+        "description": "Title on popup page: Dynamic Code Analysis"
+    },
+    "settingResetAndSave": {
+        "message": "Reset and Save",
+        "description": "Button on the settings page: Reset and Save"
+    },
+    "settingSave": {
+        "message": "Save",
+        "description": "Button on the settings page: Save"
+    },
+    "popupClickToExpand": {
+        "message": "Expand",
+        "description": "Click to expand text prompt"
+    },
+    "popupClickToCollapse": {
+        "message": "Collapse",
+        "description": "Click to collapse text prompt"
+    },
+   "getstartedContent":{
+        "message":"## Home Page Features\n* Information Display\n    * Field matching and display for IP, IP+port, domain, ID card number, phone number, email, JWT, encryption algorithms, sensitive information, dynamic loading functions, path, incomplete path, complete URL, static path, etc.\n    * Areas with excessive data will require mouse wheel scrolling within the area to load more content. You can use the wheel outside the area to quickly access other areas.\n\n* Dynamic Code Analysis and AI Restoration\n    * Detect and analyze dynamically loaded code in JavaScript, including dynamic loading code generated by webpack bundling tools.\n    * By clicking the black < before functions suspected of dynamically generating JS files, you can use the integrated OpenAI API to analyze and restore the dynamic code, ultimately obtaining all JS files of the entire project. This means the plugin can perform information gathering on the entire project, bypassing frontend trigger logic and permission validation. Currently verified to work with functions in the form of function(e){return a.p+{4:'679e89'}[e]+'.js'}.\n    * Functions suspected of dynamic loading will be highlighted with a yellow background, but manual confirmation is recommended before AI analysis.\n    * Once you click the black < for dynamic analysis, the plugin icon will display the AI request progress, such as 1/3.\n    * AI analysis may be slow, requiring approximately 30 seconds of waiting.\n    * The scale of JS files restored by AI will be indicated through toast notifications.\n    * JS files obtained through AI restoration will be searched for information again, and new content will be displayed with black <.\n    * In the settings page, you can customize AI API address, key, model, and prompts. Verified models include doubao-1-5-lite-32k-250115 and deepseek-chat.\n    * This feature will be paid as a membership. Membership status is bound to device ID and stored in chrome.storage, so be careful not to clear this information. You can try to crack it, it's not difficult, but please don't spread the cracking method.\n\n* Copy\n    * A copy button for each area, which can copy the content of the corresponding area\n    * A separate \"Copy URL\" button that can copy the content of the PATH area and prepend the current page's URL to each line to form a complete URL.\n    * Right-click on each text item to copy that specific text individually.\n\n* Information Source\n    * Each displayed information is preceded by an orange '<'. Hover your mouse over it and stay silent for 2 seconds to see the source URL of the current information. You can also open the source link by \"ctrl+click\" or \"right-click - open link in new tab\".\n\n* Processing Progress Display\n    * The processing progress is displayed under the \"Home\" page, e.g., Processing: 1/20, where 1 is the number of links requested and 20 is the total number of links to be requested. If all requests are completed, it will display as Completed: 20/20.\n    * The entire page's refresh logic is also based on processing progress, refreshing data by listening for data changes before processing is complete.\n\n## Configuration Page Features\n\n* Clear Cache\n    * Since the extracted data is stored in the browser's localstorage, it can occupy memory if not cleared for a long time.\n    * The plugin introduced an automatic expiration logic in version 2.0.17, where data not accessed within 7 days will expire.\n    * Users can also manually click \"Clear\" to immediately clear the stored data.\n\n* Global Floating Window\n    * Once opened, the FindSomething page will embed into every opened page, eliminating the need to interact with the plugin.\n    * However, new features have not yet been added to the global floating window, only maintaining basic functionality.\n\n* Auto Timeout\n    * This setting is off by default. When enabled, requests initiated by the plugin backend will be terminated after 2s to avoid long waiting times.\n\n* Safe Mode\n    * In safe mode, the plugin will only access JavaScript resources to avoid leaving the current page or accessing sensitive operation links.\n    * When safe mode is turned off, it will access all URLs of the current page's src and href attributes, regardless of link type, including CSS, images, or APIs, which may lead to unexpected requests.\n    * Safe mode is enabled by default.\n\n* Dynamic Code Analysis\n    * Controls the switch for dynamic code analysis feature. When turned off, it won't check membership status or perform dynamic code analysis.\n\n* Webhook Callback\n    * I recommend using POST, as GET has limitations on the length of parameters.\n    * If the parameter name is written in the request parameter location, then the request body will be in the format data={\"xx\":\"xx\"}.\n    * If no parameter name is written in the request parameter location, then the request body will be in JSON format.\n    * The request body includes configuration, progress, all extracted information, and their sources.\n    * Some websites extract a lot of content, so be mindful of configuring your webhook site to handle such a large amount of data in one request.\n\n* Domain Allowlist\n    * The logic is based on ending with xxx. Domains on the allowlist will not be requested.\n\n* AI Configuration\n    * You can customize the API address (write to the chat directory, such as https://api.deepseek.com/chat/ or https://ark.cn-beijing.volces.com/api/v3/chat), key, model (verified models include doubao-1-5-lite-32k-250115 and deepseek-chat), system prompt, and user prompt. The {url} placeholder in the user prompt represents the current JS path, used for AI to infer relative paths.\n\n* Layout Settings\n    * You can configure the order of each area on the home page in the layout settings on the right side of the configuration page, by dragging each area name to adjust, or by dragging from the left area to the right area.",
+        "description":"getstarted"
+    }
+}

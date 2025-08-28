@@ -1,0 +1,29 @@
+#confirm {
+    display: none;
+    background-color: #ff1a1a;
+    border: 1px solid #aaa;
+    position: fixed;
+    width: 400px;
+    left: 50%;
+    margin-left: -100px;
+    padding: 6px 8px 8px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#confirm button {
+    background-color: #ddf;
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 5px;
+    text-align: center;
+    width: 80px;
+    cursor: pointer;
+}
+
+#confirm .message {
+    text-align: left;
+    color: #fff !important;
+    line-height: 1.6;
+}

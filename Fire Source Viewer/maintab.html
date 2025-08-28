@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/maintab.css" type="text/css" />
+    <link rel="stylesheet" href="css/alert.css" type="text/css" />
+    <link rel="stylesheet" href="ext/custom.css" type="text/css" />
+    <title></title>
+</head>
+
+<body>
+    <div id="list">
+        <h2>HTML</h2>
+        <div id="confirm">
+            <div class="message"></div>
+            <button class="yes">OK</button>
+        </div>
+        <ol id="htmllist">
+        </ol>
+
+        <h2>Javascript <span id="jstotal"></span> &nbsp;
+            <i>(external <span id="jsext"></span>,
+            inline <span id="jsin"></span>)</i></h2>
+
+        <ol id="jslist">
+        </ol>
+
+        <h2>CSS <span id="csstotal"></span> &nbsp;
+            <i>(external <span id="cssext"></span>,
+            inline <span id="cssin"></span>)</i></h2>
+
+        <ol id="csslist">
+        </ol>
+
+        <div id="tips">
+            <p>Tips</p>
+            <div>
+                <ul>
+                    <li>Shows current sources in the DOM.</li>
+                    <li>"INJECTED" nodes have been injected to DOM by Javascript after initial page load.</li>
+                    <li>Press B to toggle beautifier.</li>
+                    <li>Press N to toggle line numbers.</li>
+                    <li>Adjust <a id="options" href="#">options</a> of this extension.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="srcview">
+        <a href="#" id="beautify">&#10004; Beautify</a>
+        <a href="#" id="copy2clip">&#9758; Copy to clipboard</a>
+        <a href="#" id="validate">&check; HTML checker</a>
+
+        <h2 id="fname">&nbsp;</h2>
+        <p id="showerr">Error loading page</p>
+        <pre id="src"><ol></ol><code></code></pre>
+    </div>
+
+    <script src="ext/jquery-3.3.1.js"></script>
+    <script src="js/maintab.js"></script>
+    <script src="js/config.js"></script>
+    <script src="ext/highlight.js"></script>
+    <script src="ext/xhmlChecker.js"></script>
+    <script src="ext/beautify.js"></script>
+    <script src="ext/beautify-html.js"></script>
+    <script src="ext/beautify-css.js"></script>
+</body>
+
+</html>

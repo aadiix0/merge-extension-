@@ -1,0 +1,169 @@
+<!--  
+@Date    : 2020-09-12 16:26:48
+@Author  : residuallaugh 
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">    
+</head>
+<body style="width:780px; font-size: 14px;">
+    <div style="width:780px; height: 30px; margin-left: 15px;">
+        <a href="popup.html"><div id="Zhuye" style="width: 55px; height: 28px; float: left; text-align: center; line-height: 28px; font-size: 14px; background: #ffffff; color: #000000; border: 1px solid black;border-radius: 2px 0px 0px 2px;">主页</div></a>
+        <a href="settings.html"><div id="Peizhi" style="width: 55px; height: 28px; float: left; text-align: center; line-height: 28px; font-size: 14px; background: #000000; color: #ffffff; border: 1px solid black;border-left: none;border-radius: 0px 0px 0px 0px;">配置</div></a>
+        <a href="#" id="manual-link"><div id="Shouce" style="width: 70px; height: 28px; float: left; text-align: center; line-height: 28px; font-size: 14px; background: #ffffff; color: #000000; border: 1px solid black;border-left: none;border-radius: 0px 2px 2px 0px;"></div></a>
+    </div>
+    <div style="width:100%; height: 800px; margin-left: 15px; margin-top: 16px;">
+        <!-- 第一行：基础设置和布局设置 -->
+        <div style="width: 300px; float: left;">
+           <div class="findsomething_title" style="margin-bottom:10px;"><div style="float:left; width: 230px;" id="settingClearCache">清理缓存</div><a href="#"><div id="settingClearLocalStorage" style="width: 60px; float: left;">清理</div></a></div>
+           <div class="findsomething_title" style="margin-bottom:10px;"><div style="float:left; width: 230px;" id="settingGlobalFloatingWindow">全局悬浮窗</div><a href="#"><div id="global_float" style="width: 60px; float: left;">打开</div></a></div>
+           <div class="findsomething_title" style="margin-bottom:10px;"><div style="float:left; width: 230px;" id="settingAutoTimeout">自动超时</div><a href="#"><div id="fetch_timeout" style="width: 60px; float: left;">打开</div></a></div>
+            <div class="findsomething_title" style="margin-bottom:10px;"><div style="float:left; width: 230px;" id="settingSafe">安全模式</div><a href="#"><div id="settingSafeMode" style="width: 60px; float: left;">打开</div></a></div>
+           <div class="findsomething_title" style="margin-bottom:10px;"><div style="float:left; width: 230px;" id="settingVipSwitch">VIP开关</div><a href="#"><div id="vipSwitch" style="width: 60px; float: left;">打开</div></a></div>
+           
+           <div class="findsomething_title" style="margin-bottom:10px; float: left; width: 300px;" id="settingWebhook">Webhook</div>
+           <div style="width: 300px; float: left; text-align: left; line-height: 34px;">
+                <div style="float: left; width: 100px;" id="settingWebhookUrl">回调地址</div><div style="float: left; width: 198px; height: 34px;"><input type="text" id="url" style="width: 198px; height: 26px; padding: 0 0 0 0;  border: 1px solid #d8d8d8;"></div>
+                <div style="float: left; width: 100px; height: 68px;" id="settingWebhookMethod">请求方法</div><div style="float: left; width: 198px; height: 68px;"><select id="method" style="width: 200px; height: 28px; border-color: #e8e8e8;" >
+                  <option value ="GET">GET</option>
+                  <option value ="POST">POST</option>
+               </select></div>
+                <div style="float: left; width: 100px; height: 68px;" id="settingWebhookArg">请求参数</div><div style="float: left; width: 198px; height: 68px;"><input type="text" id="arg" style="width: 198px; height: 26px; padding: 0 0 0 0;  border: 1px solid #d8d8d8;"></div>
+                <div style="float: left; width: 100px;" id="settingWebhookHeaders">自定义headers</div><div style="float: left; width: 198px; margin-top:6px;"><textarea id="headers" style="width: 198px; padding: 0 0 0 0; border-color: #e8e8e8; min-height: 200px;" 
+placeholder='{
+    "auth":"auth_key"
+}'></textarea></div>
+           </div>
+           
+           <a href="#"><div style="width: 100px; height: 28px; float: left; text-align: center; line-height: 28px; font-size: 14px; background: #ffffff; color: #000000; border: 1px solid black;border-radius: 2px 2px 2px 2px; margin-top: 10px;" id="reset" class="settingResetAndSave">置空并保存</div></a>
+           <a href="#"><div style="width: 40px; height: 28px; float: left; text-align: center; line-height: 28px; font-size: 14px; background: #000000; color: #ffffff; border: 1px solid black;border-radius: 2px 2px 2px 2px; margin-left: 10px; margin-top: 10px;" id="save" class="settingSave">保存</div></a>
+           
+           <div class="findsomething_title" style="margin-bottom:10px; float: left; width: 300px; margin-top: 20px;" id="settingDomainAllowList">域名白名单</div>
+           <div style="float: left; width: 300px; margin-top:6px;"><textarea id="allowlist" style="width: 298px; padding: 0 0 0 0; border-color: #e8e8e8; min-height: 200px;">.google.com
+.amazon.com
+portswigger.net
+</textarea></div>
+           <a href="#"><div style="width: 100px; height: 28px; float: left; text-align: center; line-height: 28px; font-size: 14px; background: #ffffff; color: #000000; border: 1px solid black;border-radius: 2px 2px 2px 2px; margin-top: 10px;" id="reset_allowlist" class="settingResetAndSave">置空并保存</div></a>
+           <a href="#"><div style="width: 40px; height: 28px; float: left; text-align: center; line-height: 28px; font-size: 14px; background: #000000; color: #ffffff; border: 1px solid black;border-radius: 2px 2px 2px 2px; margin-left: 10px; margin-top: 10px;" id="save_allowlist" class="settingSave">保存</div></a>
+           
+           <div class="findsomething_title" style="margin-bottom:10px; float: left; width: 300px; margin-top: 20px;" id="settingAI">AI配置</div>
+           <div style="width: 300px; float: left; text-align: left; line-height: 34px;">
+                <div style="float: left; width: 100px;" id="settingAIbaseURL">调用地址</div>
+                <div style="float: left; width: 198px; height: 34px;"><input type="text" id="AIbaseURL" value="" style="width: 198px; height: 26px; padding: 0 0 0 0;  border: 1px solid #d8d8d8;"></div>
+           </div>
+           <div style="width: 300px; float: left; text-align: left; line-height: 34px;">
+                <div style="float: left; width: 100px;" id="settingAIapiKey">APIKEY</div>
+                <div style="float: left; width: 198px; height: 34px;"><input type="text" id="AIapiKey" value="" style="width: 198px; height: 26px; padding: 0 0 0 0;  border: 1px solid #d8d8d8;"></div>
+           </div>
+           <div style="width: 300px; float: left; text-align: left; line-height: 34px;">
+                <div style="float: left; width: 100px;" id="settingAImodel">model</div>
+                <div style="float: left; width: 198px; height: 34px;"><input type="text" id="AImodel" value="" style="width: 198px; height: 26px; padding: 0 0 0 0;  border: 1px solid #d8d8d8;"></div>
+           </div>
+           <div style="width: 300px; float: left; text-align: left; line-height: 34px;">
+                <div style="float: left; width: 100px;" id="settingAISystemPrompt">系统提示词</div>
+                <div style="float: left; width: 198px; margin-top:6px;"><textarea id="AISystemPrompt" style="width: 198px; padding: 0 0 0 0; border-color: #e8e8e8; min-height: 120px;" 
+placeholder='你将扮演一个js解释器，我将给你一段js代码和一个url，这段代码应该是用来动态生成js路径的，你需要帮我还原这段代码，给出全部javascript文件的url路径，路径需要以http开头，以.js结尾。'></textarea></div>
+           </div>
+           <div style="width: 300px; float: left; text-align: left; line-height: 34px;">
+                <div style="float: left; width: 100px;" id="settingAIUserPrompt">用户提示词</div>
+                <div style="float: left; width: 198px; margin-top:6px;"><textarea id="AIUserPrompt" style="width: 198px; padding: 0 0 0 0; border-color: #e8e8e8; min-height: 60px;" 
+placeholder='将这段动态加载代码还原为Js路径，输出结果一行一个。给你的url：{url}。'></textarea></div>
+           </div>
+           <a href="#"><div style="width: 100px; height: 28px; float: left; text-align: center; line-height: 28px; font-size: 14px; background: #ffffff; color: #000000; border: 1px solid black;border-radius: 2px 2px 2px 2px; margin-top: 10px;" id="reset_AI" class="settingResetAndSave">置空并保存</div></a>
+           <a href="#"><div style="width: 40px; height: 28px; float: left; text-align: center; line-height: 28px; font-size: 14px; background: #000000; color: #ffffff; border: 1px solid black;border-radius: 2px 2px 2px 2px; margin-left: 10px; margin-top: 10px;" id="save_AI" class="settingSave">保存</div></a>
+        </div>
+        <div style="width: 450px; height: 800px; float: left; margin-left: 20px;">
+            <div class="findsomething_title" style="margin-bottom:10px;" id="settingLayout"></div>
+            <div style="width: 450px; float: left; text-align: left; line-height: 34px;">
+                <div id="layout-container" style="border: 1px solid #e8e8e8; padding: 10px; min-height: 300px; background: #f9f9f9;">
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="margin: 0 0 10px 0; color: #333;" id="settingLayoutLeftArea"></h4>
+                        <div id="left-layout-items" class="layout-items"></div>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="margin: 0 0 10px 0; color: #333;" id="settingLayoutRightArea"></h4>
+                        <div id="right-layout-items" class="layout-items"></div>
+                    </div>
+                </div>
+                <div style="margin-top: 10px;">
+                    <a href="#"><div style="width: 100px; height: 28px; float: left; text-align: center; line-height: 28px; font-size: 14px; background: #ffffff; color: #000000; border: 1px solid black;border-radius: 2px 2px 2px 2px;" id="reset-layout" class="settingResetAndSave">恢复默认</div></a>
+                    <a href="#"><div style="width: 40px; height: 28px; float: left; text-align: center; line-height: 28px; font-size: 14px; background: #000000; color: #ffffff; border: 1px solid black;border-radius: 2px 2px 2px 2px; margin-left: 10px;" id="save-layout" class="settingSave">保存</div></a>
+                </div>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+        
+
+
+    </div>
+</body>
+<style type="text/css">
+    a{
+    text-decoration:none;
+    color:#333;
+    }
+    .findsomething_title {
+        font-size: 16px;
+        font-weight: bold;
+        border-left: 4px solid black;
+        text-indent: 4px;
+        height: 16px;
+        line-height: 16px;
+    }
+    input:focus{
+        outline: none;
+    }
+    select:focus{
+        outline: none;
+    }
+    textarea:focus{
+        outline: none;
+    }
+    .layout-items {
+        min-height: 50px;
+        border: 1px dashed #ccc;
+        padding: 5px;
+        background: white;
+    }
+    .layout-item {
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        margin: 5px 0;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        cursor: move;
+        user-select: none;
+        transition: all 0.2s ease;
+    }
+    .layout-item:hover {
+        background: #f0f0f0;
+        border-color: #999;
+    }
+    .layout-item.dragging {
+        opacity: 0.5;
+        transform: rotate(5deg);
+    }
+    .layout-item .drag-handle {
+        margin-right: 8px;
+        color: #999;
+        font-size: 12px;
+        cursor: move;
+    }
+    .layout-item .item-name {
+        flex: 1;
+        font-weight: bold;
+    }
+    .layout-item .item-priority {
+        color: #666;
+        font-size: 12px;
+    }
+    .layout-drop-zone {
+        border: 2px dashed #4CAF50;
+        background: #f0f8f0;
+    }
+</style>
+<script type="text/javascript" src="settings.bundle.js"></script>
+</html>
